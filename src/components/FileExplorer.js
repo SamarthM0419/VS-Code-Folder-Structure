@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import json from "../data.json";
 import "../App.css";
+import List from "./List";
 
 const FileExplorer = () => {
   const [data, setData] = useState(json);
@@ -8,11 +9,7 @@ const FileExplorer = () => {
   return (
     <div>
       <h1>File Folder Explorer</h1>
-      <div className="container">
-        {data.map((node) => (
-          <div key={node.id}>{node.name}</div>
-        ))}
-      </div>
+      <List list={data} />
     </div>
   );
 };
